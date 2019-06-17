@@ -1,0 +1,56 @@
+.formCtn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+input{
+    margin: 1em;
+    padding: 12px 20px;
+    width: 26em;
+    border-radius: .5em;
+    border: solid 1px gray;
+    color: rgb(32, 158, 148);
+}
+
+
+h2 {
+    font-family: Verdana, Tahoma, sans-serif;
+    font-size: 35px;
+    color: rgb(32, 158, 148);
+}
+
+label {
+    font-family: 'Josefin Slab', serif;
+    font-size: 30px;
+    font-weight: 600;
+    letter-spacing: .1em;
+    color: rgb(41, 41, 41);
+}
+
+button {
+    padding:  .8em 4em;
+    background-image: linear-gradient( rgb(160, 243, 236),  rgb(32, 158, 148) );
+    border-radius: .4em;
+    color: white;
+    font-family: Verdana, Tahoma, sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: .1em;
+    border: none;
+    &:hover {
+        background-image: linear-gradient(   rgb(250, 181, 117), rgb(211, 116, 28) );
+        box-shadow: 2px 2px 5px grey;
+    }
+}
+
+.errors p {
+    font-family: Verdana, Tahoma, sans-serif;
+    color:   rgb(250, 117, 117);
+    font-weight: 600;
+    letter-spacing: .1em;
+}
+
+*:focus {
+    outline: none;
+}

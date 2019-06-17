@@ -1,0 +1,38 @@
+
+<div class="formCtn">
+
+        <h2>CREATE YOUR PROFILE</h2>
+
+    <form (ngSubmit)="userForm.valid && onSubmit()" #userForm="ngForm">
+            <label>User Name <br>
+            <input name="user-name" type="text" #name="ngModel" minlength="4" maxlength="25" [(ngModel)]="userForm.name"  required>
+            </label>
+
+            <div *ngIf="name.errors" class="errors">
+                <p *ngIf="name.errors.required && userForm.submitted">Le champ est requis <br> -</p>
+                <p *ngIf="name.errors.maxlength && userForm.submitted">Le champ user ne doit pas dépasser 25 caractères <br> -</p>
+                <p *ngIf="name.errors.minlength && userForm.submitted">Le champ user doit dépasser 4 caractères <br> -</p>
+            </div>
+            
+            <label>Mail <br>
+                <input name="user-email" type="email" [(ngModel)]="userForm.email" #email="ngModel"   required email>
+            </label>
+
+            <div *ngIf="email.errors" class="errors">
+                <p *ngIf="email.errors.required && userForm.submitted">Email est requis <br> -</p>
+                <p *ngIf="email.errors.email && userForm.submitted">Le champ email est invalide ! <br> -</p>
+            </div>
+
+            <label>Password <br>
+            <input name="user-password" type="password" minlength="6" [(ngModel)]="userForm.password"  #password="ngModel" required>
+            </label>
+
+            <div *ngIf="password.errors" class="errors">
+                <p *ngIf="password.errors.required && userForm.submitted">Password est requis <br> -</p>
+            </div>
+
+            <button type="submit">SAVE</button>
+    </form>
+</div>
+
+<link href="https://fonts.googleapis.com/css?family=Josefin+Slab:400,600,700&display=swap" rel="stylesheet">
